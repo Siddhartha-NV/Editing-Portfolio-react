@@ -1,11 +1,7 @@
-/* ================== NEW ================== */
-/* Native Smooth Scrolling for the whole page */
+
 html {
     scroll-behavior: smooth;
 }
-/* ========================================= */
-
-/* --- Variables & Global Styles (No changes) --- */
 :root {
     --bg-dark: #1A1A2E;
     --bg-light: #0F0F1A;
@@ -46,51 +42,15 @@ p { margin-bottom: 1rem; color: var(--text-muted); }
 .filter-btn.active { background-color: var(--primary-accent); color: var(--bg-dark); border-color: var(--primary-accent); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); }
 .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
 .portfolio-item { background-color: var(--bg-dark); border-radius: 10px; overflow: hidden; position: relative; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; cursor: pointer; 
-    /* ================== NEW ================== */
     animation: fadeIn 0.5s ease forwards;
-    /* ========================================= */
 }
 .portfolio-item img, .portfolio-item video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform var(--transition-speed); }
 .portfolio-item:hover img, .portfolio-item:hover video { transform: scale(1.05); }
 .portfolio-item .item-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; opacity: 0; transition: opacity var(--transition-speed); }
 .portfolio-item:hover .item-overlay { opacity: 1; }
-.portfolio-item .item-title, .portfolio-item .item-category { display: none; } /* These are still hidden as they weren't in the original design */
+.portfolio-item .item-title, .portfolio-item .item-category { display: none; }
 
 
-/* --- About Section (No changes) --- */
-.about-section { padding: 80px 0; background-color: var(--bg-dark); }
-.about-container { display: flex; align-items: center; gap: 50px; }
-.about-image { flex-basis: 35%; flex-shrink: 0; }
-.about-image img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    object-fit: cover;
-    aspect-ratio: 1/1;
-    object-position: center top;
-}
-.about-content { flex-basis: 65%; }
-.about-content h3 { font-family: var(--font-heading); font-size: 2.2rem; color: var(--primary-accent); margin-bottom: 1.5rem; }
-.about-content p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem; }
-
-/* --- Contact Section (No changes) --- */
-.contact-section { padding: 80px 0; background-color: var(--bg-light); text-align: center; }
-.contact-intro { max-width: 600px; margin: 0 auto 40px auto; font-size: 1.1rem; }
-.contact-details { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-.contact-card { background-color: var(--bg-dark); padding: 30px 40px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.contact-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
-.contact-card h4 { font-family: var(--font-heading); color: var(--secondary-accent); font-size: 1.5rem; margin-bottom: 15px; }
-.contact-card a { color: var(--text-muted); text-decoration: none; font-weight: 700; margin: 0 5px; transition: color 0.3s; }
-.contact-card a:hover { color: var(--primary-accent); }
-
-/* --- Footer (No changes) --- */
-.footer-section { background-color: var(--bg-dark); color: var(--text-muted); padding: 30px 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-.footer-section p { margin: 0; font-size: 0.9rem; }
-
-/* --- Lightbox Styling --- */
-/* ================== UPDATED ================== */
-/* The lightbox is now displayed by default when rendered by React.
-   We removed `display: none;` */
 .lightbox { 
     position: fixed; 
     top: 0; 
@@ -98,15 +58,13 @@ p { margin-bottom: 1rem; color: var(--text-muted); }
     width: 100%; 
     height: 100%; 
     background-color: rgba(0, 0, 0, 0.9); 
-    display: flex; /* This makes it visible */
+    display: flex;
     align-items: center; 
     justify-content: center; 
     z-index: 1000; 
     padding: 20px;
-    animation: fadeIn 0.3s ease; /* Add a fade-in for the lightbox itself */
+    animation: fadeIn 0.3s ease;
 }
-/* We no longer need the `.body.lightbox-active .lightbox` selector */
-/* ============================================= */
 
 .lightbox-content { position: relative; background-color: var(--bg-light); padding: 25px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 90vw; max-height: 90vh; display: flex; flex-direction: column; }
 .lightbox-close { position: absolute; top: 15px; right: 25px; color: var(--text-light); font-size: 40px; font-weight: bold; cursor: pointer; line-height: 1; transition: color 0.3s; }
@@ -117,8 +75,6 @@ p { margin-bottom: 1rem; color: var(--text-muted); }
 .lightbox-details h3 { font-family: var(--font-heading); color: var(--primary-accent); font-size: 1.8rem; margin-bottom: 10px; }
 .lightbox-details p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 0; }
 
-/* ================== NEW ================== */
-/* Animation keyframes for the fade-in effect */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -129,9 +85,7 @@ p { margin-bottom: 1rem; color: var(--text-muted); }
         transform: translateY(0);
     }
 }
-/* ========================================= */
 
-/* --- Responsive Adjustments (No changes) --- */
 @media (max-width: 768px) {
     .hero-content h1 { font-size: clamp(2.5rem, 10vw, 4rem); }
     .hero-content p { font-size: 1rem; }

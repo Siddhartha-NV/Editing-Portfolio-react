@@ -1,5 +1,3 @@
-// src/data/portfolioData.js
-
 export const portfolioItems = [
     // --- GRAPHIC DESIGN ---
     { id: 1, type: 'image', category: 'Graphic Design', title: 'Edit noir logo', src: '/portfolio/graphicdesign/1.png', description: 'Add your detailed description for this project here.' },
